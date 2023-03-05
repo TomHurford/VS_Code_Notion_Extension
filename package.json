@@ -1,0 +1,60 @@
+{
+  "name": "vscodenotion",
+  "displayName": "vsCodeNotion",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscodenotion.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "configuration": {
+      "title": "vsCodeNotion Configuration",
+      "type": "object",
+      "properties": {
+        "vscodenotion.token": {
+          "type": "string",
+          "default": "",
+          "description": "Notion API Token"
+        },
+        "vscodenotion.database": {
+          "type": "string",
+          "default": "",
+          "description": "Notion Database ID"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./src/test/runTest.js",
+    "dry-run": "node ./src/index.js"
+  },
+  "devDependencies": {
+    "@notionhq/client": "^1.0.1",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.76.0",
+    "@vscode/test-electron": "^2.2.3",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "vscode": "^1.1.37"
+  }
+}
